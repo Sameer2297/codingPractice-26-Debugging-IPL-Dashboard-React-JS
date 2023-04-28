@@ -38,14 +38,14 @@ class Home extends Component {
     return (
       <ul className="teams-list">
         {teamsData.map(eachTeam => (
-          <TeamCard teamDetails={eachTeam} />
+          <TeamCard key={eachTeam.id} teamDetails={eachTeam} />
         ))}
       </ul>
     )
   }
 
   renderLoader = () => (
-    <div className="loader-container">
+    <div data-testid="loader" className="loader-container">
       <Loader type="Oval" color="#ffffff" height={50} />
     </div>
   )
